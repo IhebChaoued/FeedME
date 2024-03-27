@@ -1,0 +1,19 @@
+
+
+<div class="random_recipes">
+    <h1>Result</h1>
+    
+    <!-- Show spinner only while loading -->
+    
+    <mat-spinner *ngIf="loading" color="warn"></mat-spinner>
+    <div class="all_food" *ngIf="!loading">
+        <div class="food" *ngFor="let meal of meals">
+            <a (click)="redirectToRecipe(meal.idMeal)">
+                <img class="food_pic" [src]="meal.strMealThumb" alt="">
+            </a>
+            <div class="food_like">
+                <a (click)="redirectToRecipe(meal.idMeal)">{{ meal.strMeal }}</a>
+            </div>
+        </div>
+    </div>
+</div>
